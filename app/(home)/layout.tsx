@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import { Navigation } from "@/components/shared/navigation.component";
 import HomeContextProvider from "@/context/home.context";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
@@ -19,8 +20,10 @@ export default function RootLayout({
         <HomeContextProvider>
           <section className=" h-full w-full border-[2rem] border-primary bg-primary ">
             <div className="h-full w-full border-[2rem] border-primary-foreground  bg-primary-foreground rounded-2xl">
-              <div className="h-full w-full border min-h-screen p-4 bg-white rounded-2xl">
-                <nav className="font-manrope">this is a nav</nav>
+              <div className="h-full w-full border min-h-screen min-w-screen p-4 bg-white rounded-2xl">
+                <nav className="font-manrope w-full h-full">
+                  <Navigation />
+                </nav>
                 <main>{children}</main>
                 <footer>this is a footer</footer>
               </div>
