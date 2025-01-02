@@ -10,7 +10,6 @@ import {
   NavigationMenu,
   NavigationMenuContent,
   NavigationMenuItem,
-  NavigationMenuLink,
   NavigationMenuList,
   NavigationMenuTrigger,
 } from "@/components/ui/navigation-menu";
@@ -18,6 +17,7 @@ import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { ChevronDown, ChevronRight, Menu } from "lucide-react";
 import Link from "next/link";
 import * as React from "react";
+import AnimatedNavigationLink from "../ui/animated-navigation-link";
 
 interface ServiceItem {
   title: string;
@@ -184,15 +184,66 @@ export function Navigation() {
   const [isOpen, setIsOpen] = React.useState(false);
 
   return (
-    <header className="border-b">
+    <header className="w-full h-full">
       <div className="w-full mx-auto flex items-center justify-between px-4 py-4">
+        <div className="flex flex-1 items-center justify-between lg:justify-between">
+          <Link href="/" className="text-lg font-bold text-primary">
+            Logo 1
+          </Link>
+          <NavigationMenu className="hidden lg:flex">
+            <NavigationMenuList>
+              <NavigationMenuItem>
+                <Link href="/" legacyBehavior passHref>
+                  {/* <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-xs font-bold transition-colors hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-primary/50 data-[state=open]:bg-primary/50 text-primary">
+                    HOME
+                  </NavigationMenuLink> */}
+                  <AnimatedNavigationLink>HOME</AnimatedNavigationLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/about" legacyBehavior passHref>
+                  <AnimatedNavigationLink>ABOUT</AnimatedNavigationLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <NavigationMenuTrigger className="text-xs  font-bold transition-colors text-primary hover:text-primary focus:text-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-primary data-[state=open]:text-primary">
+                  SERVICES
+                </NavigationMenuTrigger>
+
+                <NavigationMenuContent>
+                  <div className="grid w-[500px] gap-1 p-4 ">
+                    {services.map((service) => (
+                      <ServiceItem key={service.href} service={service} />
+                    ))}
+                  </div>
+                </NavigationMenuContent>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/resources" legacyBehavior passHref>
+                  <AnimatedNavigationLink>RESOURCES</AnimatedNavigationLink>
+                </Link>
+              </NavigationMenuItem>
+              <NavigationMenuItem>
+                <Link href="/contact" legacyBehavior passHref>
+                  <AnimatedNavigationLink>CONTACT</AnimatedNavigationLink>
+                </Link>
+              </NavigationMenuItem>
+            </NavigationMenuList>
+          </NavigationMenu>
+          <Link
+            href="/"
+            className="text-lg font-bold text-primary hidden lg:block"
+          >
+            Logo 2
+          </Link>
+        </div>
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="lg:hidden">
             <Button variant="outline" size="icon">
               <Menu className="h-6 w-6" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="left">
+          <SheetContent side="right">
             <nav className="flex flex-col gap-4">
               <Link href="/" onClick={() => setIsOpen(false)}>
                 HOME
@@ -221,55 +272,12 @@ export function Navigation() {
             </nav>
           </SheetContent>
         </Sheet>
-        <div className="flex flex-1 items-center justify-center lg:justify-between">
-          <Link href="/" className="text-2xl font-bold text-primary">
-            SOM
-          </Link>
-          <NavigationMenu className="hidden lg:flex">
-            <NavigationMenuList>
-              <NavigationMenuItem>
-                <Link href="/" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                    HOME
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/about" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                    ABOUT
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-xs">
-                  SERVICES
-                </NavigationMenuTrigger>
-                <NavigationMenuContent>
-                  <div className="grid w-[500px] gap-1 p-4 ">
-                    {services.map((service) => (
-                      <ServiceItem key={service.href} service={service} />
-                    ))}
-                  </div>
-                </NavigationMenuContent>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/resources" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                    RESOURCES
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-              <NavigationMenuItem>
-                <Link href="/contact" legacyBehavior passHref>
-                  <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-xs font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                    CONTACT
-                  </NavigationMenuLink>
-                </Link>
-              </NavigationMenuItem>
-            </NavigationMenuList>
-          </NavigationMenu>
-        </div>
+        <Link
+          href="/"
+          className="text-lg font-bold text-primary block lg:hidden"
+        >
+          Logo 2
+        </Link>
       </div>
     </header>
   );
