@@ -28,12 +28,14 @@ export default function RootLayout({
         )}
       >
         <HomeContextProvider>
-          <section className="min-h-screen h-full w-full border-[2rem] border-[#8D0E57] ">
-            <section className="h-full w-full border-[2rem] border-[#C792AF]  ">
-              <section className="h-full w-full border  rounded-xl min-h-screen p-4">
-                {children}
-              </section>
-            </section>
+          <section className=" h-full w-full border-[2rem] border-[#8D0E57] ">
+            <div className="h-full w-full border-[2rem] border-[#C792AF]  ">
+              <div className="h-full w-full border  rounded-xl min-h-screen p-4">
+                <nav>this is a nav</nav>
+                <main>{children}</main>
+                <footer>this is a footer</footer>
+              </div>
+            </div>
           </section>
         </HomeContextProvider>
       </body>
