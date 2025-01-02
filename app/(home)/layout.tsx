@@ -28,9 +28,9 @@ export default function RootLayout({
         )}
       >
         <HomeContextProvider>
-          <section className=" h-full w-full border-[2rem] border-[#8D0E57] ">
-            <div className="h-full w-full border-[2rem] border-[#C792AF]  ">
-              <div className="h-full w-full border  rounded-xl min-h-screen p-4">
+          <section className=" h-full w-full border-[2rem] border-[#8D0E57] bg-[#8D0E57] ">
+            <div className="h-full w-full border-[2rem] border-[#C792AF]  bg-[#C792AF] rounded-2xl">
+              <div className="h-full w-full border min-h-screen p-4 bg-white rounded-2xl">
                 <nav>this is a nav</nav>
                 <main>{children}</main>
                 <footer>this is a footer</footer>
