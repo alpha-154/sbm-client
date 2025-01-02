@@ -2,7 +2,7 @@
 import DemoCounter from "@/components/others/demo-counter.component";
 
 export default function Home() {
-  return CounterContainer;
+  return <CounterContainer />;
 }
 
 const CounterContainer = () => {
