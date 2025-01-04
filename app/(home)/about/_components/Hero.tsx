@@ -30,7 +30,7 @@ export default function HeroSection() {
             A global team of experts with a vision of making marketing
             stress-free for small business owners!
           </p>
-          <Button className="bg-secondary font-[500] text-white text-lg tracking-[0.02em] mt-4">
+          <Button className="bg-secondary font-[500] text-white text-[18px] tracking-[0.02em] mt-4">
             Meet The Team
           </Button>
         </div>
