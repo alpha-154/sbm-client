@@ -1,13 +1,9 @@
 import "@/app/globals.css";
+import Footer from "@/components/shared/footer.component";
+import { Navigation } from "@/components/shared/navigation.component";
 import HomeContextProvider from "@/context/home.context";
 import { cn } from "@/lib/utils";
 import type { Metadata } from "next";
-import { Inter as FontSans } from "next/font/google";
-
-const fontSans = FontSans({
-  subsets: ["latin"],
-  variable: "--font-sans",
-});
 
 export const metadata: Metadata = {
   title: "Home",
@@ -21,13 +17,22 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
-        )}
-      >
-        <HomeContextProvider>{children}</HomeContextProvider>
+      <body className={cn("min-h-screen bg-background font-sans antialiased")}>
+        <HomeContextProvider>
+          <section className=" h-full w-full border-[2rem] border-primary bg-primary ">
+            <div className="h-full w-full border-[2rem] border-primary-foreground  bg-primary-foreground rounded-2xl">
+              <div className="h-full w-full border min-h-screen min-w-screen p-4 bg-white rounded-2xl">
+                <nav className="font-manrope w-full h-full">
+                  <Navigation />
+                </nav>
+                <main>{children}</main>
+                <section>
+                  <Footer />
+                </section>
+              </div>
+            </div>
+          </section>
+        </HomeContextProvider>
       </body>
     </html>
   );

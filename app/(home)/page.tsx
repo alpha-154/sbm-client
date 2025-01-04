@@ -1,14 +1,13 @@
 "use client";
-import DemoCounter from "@/components/others/demo-counter.component";
+
+import NewsLetter from "@/components/shared/news-letter.component";
+import HeroSection from "./_components/hero-section.component";
 
 export default function Home() {
-  return <CounterContainer />;
-}
-
-const CounterContainer = () => {
   return (
-    <div className="h-screen w-full bg-violet-500 flex justify-center">
-      <DemoCounter />
+    <div className="w-full h-full">
+      <HeroSection />
+      <NewsLetter className="rounded-t-[2rem]" />
     </div>
   );
-};
+}
