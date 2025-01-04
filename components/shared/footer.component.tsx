@@ -1,9 +1,16 @@
 import { Instagram, Linkedin } from "lucide-react";
 import { Button } from "../ui/button";
-
 export default function Footer() {
   return (
-    <footer className="bg-[#f4dbe9] px-6 py-16 rounded-b-[2rem]">
+    <footer
+      className=" px-6 py-16 rounded-[2rem]"
+      style={{
+        backgroundImage: "url('/assets/footer-bg.svg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        borderRadius: "32px",
+      }}
+    >
       <div className="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-3 gap-12">
         {/* Quick Links */}
         <div>

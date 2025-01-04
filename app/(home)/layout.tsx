@@ -26,7 +26,7 @@ export default function RootLayout({
                   <Navigation />
                 </nav>
                 <main>{children}</main>
-                <section>
+                <section className="w-full h-full my-8">
                   <Footer />
                 </section>
               </div>
