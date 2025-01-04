@@ -1,4 +1,5 @@
 import "@/app/globals.css";
+import Footer from "@/components/shared/footer.component";
 import { Navigation } from "@/components/shared/navigation.component";
 import HomeContextProvider from "@/context/home.context";
 import { cn } from "@/lib/utils";
@@ -25,7 +26,9 @@ export default function RootLayout({
                   <Navigation />
                 </nav>
                 <main>{children}</main>
-                <footer>this is a footer</footer>
+                <section>
+                  <Footer />
+                </section>
               </div>
             </div>
           </section>
