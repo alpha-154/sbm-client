@@ -30,64 +30,64 @@ const services: ServiceItem[] = [
     title: "SEO",
     href: "/services/seo",
     subCategories: [
-      { title: "On-Page SEO", href: "/services/seo/on-page" },
-      { title: "Technical SEO", href: "/services/seo/technical" },
-      { title: "Local SEO", href: "/services/seo/local" },
+      { title: "On-Page SEO", href: "#" },
+      { title: "Technical SEO", href: "#" },
+      { title: "Local SEO", href: "#" },
     ],
   },
   {
     title: "BLOG WRITING",
     href: "/services/blog-writing",
     subCategories: [
-      { title: "Content Strategy", href: "/services/blog-writing/strategy" },
-      { title: "SEO Writing", href: "/services/blog-writing/seo" },
+      { title: "Content Strategy", href: "#" },
+      { title: "SEO Writing", href: "#" },
     ],
   },
   {
     title: "EMAIL MARKETING",
-    href: "/services/email-marketing",
+    href: "#",
     subCategories: [
       {
         title: "Campaign Management",
-        href: "/services/email-marketing/campaigns",
+        href: "#",
       },
-      { title: "Newsletter Design", href: "/services/email-marketing/design" },
+      { title: "Newsletter Design", href: "#" },
     ],
   },
   {
     title: "STRATEGIC MARKETING",
-    href: "/services/strategic-marketing",
+    href: "#",
   },
   {
     title: "SOCIAL MEDIA MANAGEMENT",
-    href: "/services/social-media",
+    href: "#",
     subCategories: [
-      { title: "Content Creation", href: "/services/social-media/content" },
+      { title: "Content Creation", href: "#" },
       {
         title: "Community Management",
-        href: "/services/social-media/community",
+        href: "#",
       },
     ],
   },
   {
     title: "WEB DESIGN AND DEVELOPMENT",
-    href: "/services/web-design",
+    href: "#",
   },
   {
     title: "FACEBOOK MANAGEMENT",
-    href: "/services/facebook",
+    href: "#",
   },
   {
     title: "INSTAGRAM MANAGEMENT",
-    href: "/services/instagram",
+    href: "#",
   },
   {
     title: "LINKEDIN MANAGEMENT",
-    href: "/services/linkedin",
+    href: "#",
   },
   {
     title: "PINTEREST MANAGEMENT",
-    href: "/services/pinterest",
+    href: "#",
   },
 ];
 
@@ -98,7 +98,7 @@ function ServiceItem({ service }: { service: ServiceItem }) {
     return (
       <Link
         href={service.href}
-        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-xs"
+        className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors text-secondary hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground text-sm font-semibold "
       >
         {service.title}
       </Link>
@@ -108,8 +108,8 @@ function ServiceItem({ service }: { service: ServiceItem }) {
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
       <CollapsibleTrigger
-        className="flex w-full items-center justify-between rounded-md p-3 text-left hover:bg-accent hover:text-accent-foreground text-xs"
-        onMouseEnter={() => setIsOpen(true)}
+        className="flex w-full items-center justify-between rounded-md p-3 text-left transition-colors text-secondary hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground text-sm font-semibold"
+        // onMouseEnter={() => setIsOpen(true)}
       >
         {service.title}
         <ChevronRight
@@ -123,7 +123,7 @@ function ServiceItem({ service }: { service: ServiceItem }) {
           <Link
             key={sub.href}
             href={sub.href}
-            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground text-xs"
+            className="block select-none space-y-1 rounded-md p-3 leading-none no-underline outline-none transition-colors  text-secondary  hover:text-primary focus:text-primary text-sm font-semibold"
           >
             {sub.title}
           </Link>
@@ -146,7 +146,7 @@ function MobileServiceItem({
     return (
       <Link
         href={service.href}
-        className="block py-2 hover:text-primary"
+        className="block py-2  transition-colors text-secondary  hover:text-primary-foreground focus:text-primary-foreground text-sm font-semibold"
         onClick={onSelect}
       >
         {service.title}
@@ -156,7 +156,7 @@ function MobileServiceItem({
 
   return (
     <Collapsible open={isOpen} onOpenChange={setIsOpen}>
-      <CollapsibleTrigger className="flex w-full items-center justify-between py-2 text-left">
+      <CollapsibleTrigger className="flex w-full items-center justify-between py-2 text-left transition-colors text-secondary  hover:text-primary focus:text-primary text-sm font-semibold cursor-pointer">
         {service.title}
         <ChevronDown
           className={`h-4 w-4 transition-transform ${
@@ -169,7 +169,7 @@ function MobileServiceItem({
           <Link
             key={sub.href}
             href={sub.href}
-            className="block py-2 hover:text-primary"
+            className="block py-2 transition-colors text-secondary  hover:text-primary focus:text-primary text-sm font-semibold cursor-pointer"
             onClick={onSelect}
           >
             {sub.title}
@@ -194,9 +194,6 @@ export function Navigation() {
             <NavigationMenuList>
               <NavigationMenuItem>
                 <Link href="/" legacyBehavior passHref>
-                  {/* <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-xs font-bold transition-colors hover:bg-primary hover:text-primary-foreground focus:bg-primary focus:text-primary-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-primary/50 data-[state=open]:bg-primary/50 text-primary">
-                    HOME
-                  </NavigationMenuLink> */}
                   <AnimatedNavigationLink>HOME</AnimatedNavigationLink>
                 </Link>
               </NavigationMenuItem>
@@ -206,11 +203,11 @@ export function Navigation() {
                 </Link>
               </NavigationMenuItem>
               <NavigationMenuItem>
-                <NavigationMenuTrigger className="text-xs  font-bold transition-colors text-primary hover:text-primary focus:text-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-primary data-[state=open]:text-primary">
+                <NavigationMenuTrigger className="text-base  font-bold transition-colors text-primary hover:text-primary focus:text-primary focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:text-primary data-[state=open]:text-primary">
                   SERVICES
                 </NavigationMenuTrigger>
 
-                <NavigationMenuContent>
+                <NavigationMenuContent className="bg-[#188FA726]">
                   <div className="grid w-[500px] gap-1 p-4 ">
                     {services.map((service) => (
                       <ServiceItem key={service.href} service={service} />
@@ -240,19 +237,29 @@ export function Navigation() {
         <Sheet open={isOpen} onOpenChange={setIsOpen}>
           <SheetTrigger asChild className="lg:hidden">
             <Button variant="outline" size="icon">
-              <Menu className="h-6 w-6" />
+              <Menu className="h-6 w-6 text-primary mt-1" />
             </Button>
           </SheetTrigger>
-          <SheetContent side="right">
-            <nav className="flex flex-col gap-4">
-              <Link href="/" onClick={() => setIsOpen(false)}>
+          <SheetContent side="right" className="bg-white">
+            <nav className="flex flex-col gap-4 ">
+              <Link
+                href="#"
+                onClick={() => setIsOpen(false)}
+                className="transition-colors text-secondary  hover:text-primary focus:text-primary text-sm font-semibold cursor-pointer"
+              >
                 HOME
               </Link>
-              <Link href="/about" onClick={() => setIsOpen(false)}>
+              <Link
+                href="/about"
+                onClick={() => setIsOpen(false)}
+                className="transition-colors text-secondary  hover:text-primary focus:text-primary text-sm font-semibold cursor-pointer"
+              >
                 ABOUT
               </Link>
               <div className="flex flex-col gap-2">
-                <div className="font-medium">SERVICES</div>
+                <div className="transition-colors text-secondary  hover:text-primary focus:text-primary text-sm font-semibold cursor-pointer">
+                  SERVICES
+                </div>
                 <div className="ml-4 flex flex-col gap-2">
                   {services.map((service) => (
                     <MobileServiceItem
@@ -263,10 +270,18 @@ export function Navigation() {
                   ))}
                 </div>
               </div>
-              <Link href="/resources" onClick={() => setIsOpen(false)}>
+              <Link
+                href="/resources"
+                onClick={() => setIsOpen(false)}
+                className="transition-colors text-secondary  hover:text-primary focus:text-primary text-sm font-semibold cursor-pointer"
+              >
                 RESOURCES
               </Link>
-              <Link href="/contact" onClick={() => setIsOpen(false)}>
+              <Link
+                href="/contact"
+                onClick={() => setIsOpen(false)}
+                className="transition-colors text-secondary  hover:text-primary focus:text-primary text-sm font-semibold cursor-pointer"
+              >
                 CONTACT
               </Link>
             </nav>

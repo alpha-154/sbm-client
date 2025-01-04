@@ -1,10 +1,10 @@
 export default function HeroSection() {
   return (
-    <section className="min-h-[50vh] flex items-center justify-start px-4 py-16 md:py-24">
-      <div className="max-w-[1400px] ">
-        <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1] mb-6">
+    <section className="min-h-[50vh] w-full flex items-center justify-start px-4 py-16 md:py-24">
+      <div className="max-w-[80%]">
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight leading-[1.1] mb-6 min-w-fit">
           <span className="text-primary">INTEGRATED </span>
-          <span className="text-secondary">MARKETING</span>
+          <span className="text-secondary">MARKETING</span>{" "}
           <br className="hidden sm:block" />
           <span className="text-primary">SOLUTIONS </span>
           <span className="text-secondary">FOR </span>
@@ -13,10 +13,24 @@ export default function HeroSection() {
           <span className="text-primary">BUSINESS </span>
           <span className="text-secondary">OWNERS</span>
         </h1>
-        <p className="text-[#626262] text-xl sm:text-2xl md:text-3xl lg:text-4xl max-w-[900px] leading-tight">
+        <p className="text-gray text-base sm:text-lg md:text-xl lg:text-2xl  leading-tight max-w-[80%]">
           Say goodbye to marketing overwhelm with a team 100% invested in your
           success.
         </p>
+
+        <div
+          style={{
+            backgroundImage: "url('/assets/cloud-button.svg')",
+            backgroundSize: "cover",
+            backgroundPosition: "center",
+            backgroundPositionY: "center",
+            height: "5rem",
+            // borderRadius: "32px",
+          }}
+          className="text-center text-primary font-bold text-sm flex justify-center items-center py-4 px-8 my-8 cursor-pointer hover:scale-105 transition-transform min-w-fit h-auto w-40 uppercase object-cover bg-opacity-90"
+        >
+          <span className="mt-3">explore</span>
+        </div>
       </div>
     </section>
   );
