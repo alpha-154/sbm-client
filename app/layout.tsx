@@ -2,6 +2,8 @@ import { cn } from "@/lib/utils";
 import { Providers } from "@/redux/provider";
 import type { Metadata } from "next";
 import { Inter as FontSans } from "next/font/google";
+
+import { manrope, roboto } from "@/fonts/fonts";
 import "./globals.css";
 
 const fontSans = FontSans({
@@ -24,7 +26,9 @@ export default function RootLayout({
       <body
         className={cn(
           "min-h-screen bg-background font-sans antialiased",
-          fontSans.variable
+          fontSans.variable,
+          manrope.variable,
+          roboto.variable
         )}
       >
         <Providers>{children}</Providers>
