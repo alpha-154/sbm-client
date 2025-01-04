@@ -3,7 +3,7 @@ import Image from "next/image";
 import astronaut from "@/public/assets/astronaut.png";
 export default function ConnectSection() {
   return (
-    <div className="relative max-w-4xl bg-[#80184E] mx-auto flex flex-col md:flex-row md:justify-between gap-6 border rounded-xl p-10 mb-20">
+    <div className="relative max-w-4xl bg-primary mx-auto flex flex-col md:flex-row md:justify-between gap-6 border rounded-xl p-10 mb-20">
       <div className="flex flex-col items-center md:items-start gap-6">
         <h1 className="text-white font-[Averta-ExtraBold] text-[30px] lg:text-[40px] font-[700] leading-[30px] md:leading-[40px] tracking-[0.05em] md:tracking-[0.05em] text-center md:text-left">
           We succeed by making you{" "}
@@ -14,7 +14,7 @@ export default function ConnectSection() {
           agencies promising fancy websites, improved SEO, and compelling ads.
           They may have even provided a marketing funnel and posting schedule.
         </p>
-        <Button className="bg-white hover:bg-white/90 text-[#80184E] font-[400] text-md tracking-[0.01em]">
+        <Button className="bg-white hover:bg-white/90 text-primary font-[400] text-md tracking-[0.01em]">
           Let&apos;s Connect
         </Button>
       </div>

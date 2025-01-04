@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export default function StorySection() {
   return (
-    <section className="h-fit flex items-center justify-center bg-[#188FA7]/10 px-2 md:px-4 py-10 md:py-16">
+    <section className="h-fit flex items-center justify-center bg-[#188FA7]/10 px-2 md:px-4 py-10 md:py-16 rounded-xl">
       <div className="max-w-4xl mx-auto text-center">
         <h1 className="text-[#188FA7] text-[25px] md:text-[30px] md:leading-[30px] md:tracking-[0.02em]  font-bold mb-2 md:mb-4">
           OUR STORY
