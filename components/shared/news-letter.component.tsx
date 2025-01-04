@@ -12,14 +12,25 @@ export default function NewsLetter({ className }: { className?: string }) {
     // Add your newsletter signup logic here
   };
   return (
-    <div className={cn("bg-secondary-foreground px-6 py-12 ", className)}>
+    <div
+      className={cn(
+        "bg-[#188FA726] px-6 py-12 rounded-[2rem] border border-[#188FA726]",
+        className
+      )}
+      //background: #188FA726;
+    >
       <div className="max-w-7xl mx-auto">
         <div className="flex flex-col md:flex-row gap-8 items-start md:items-center justify-between">
-          <p className="text-white text-lg md:text-xl lg:text-2xl max-w-2xl">
-            Join our exclusive newsletter community and unlock insider secrets,
-            growth hacks, and proven strategies to skyrocket your business to
-            new heights
-          </p>
+          <div className="flex flex-col gap-4">
+            <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-secondary uppercase">
+              Join our newsletter
+            </h2>
+            <p className="text-muted-foreground text-lg md:text-xl lg:text-2xl max-w-2xl">
+              Join our exclusive newsletter community and unlock insider
+              secrets, growth hacks, and proven strategies to skyrocket your
+              business to new heights
+            </p>
+          </div>
           <form onSubmit={handleSubmit} className="w-full md:w-auto">
             <div className="flex flex-col sm:flex-row gap-4">
               <Input
@@ -32,13 +43,13 @@ export default function NewsLetter({ className }: { className?: string }) {
               />
               <Button
                 type="submit"
-                className="bg-[#80184e] hover:bg-[#80184e]/90 text-white px-8"
+                className="bg-secondary hover:bg-secondary/90 text-white px-8"
               >
                 Subscribe
               </Button>
             </div>
             {error && <p className="text-red-200 text-sm mt-2">{error}</p>}
-            <p className="text-white/80 text-xs mt-2">
+            <p className="text-gray text-xs mt-2">
               We value your privacy and will never share or sell your data.
               Please read our Privacy Policy.
             </p>

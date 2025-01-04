@@ -13,7 +13,7 @@
     --primary: 328 81% 30%;
     --primary-foreground: 336 100% 86%;
     --secondary: 193 74% 37%;
-    --secondary-foreground: 193 74% 37%;
+    --secondary-foreground: 190 83% 33%;
     --muted: 220 14.3% 95.9%;
     --muted-foreground: 220 8.9% 46.1%;
     --accent: 220 14.3% 95.9%;
@@ -24,6 +24,8 @@
     --input: 220 13% 91%;
     --ring: 328 81% 30%;
     --radius: 0.5rem;
+    --gray: 0 0% 38.4%;
+    --gray-foreground: 0 0% 60%;
   }
 
   .dark {
@@ -46,6 +48,8 @@
     --border: 215 27.9% 16.9%;
     --input: 215 27.9% 16.9%;
     --ring: 328 81% 30%;
+    --custom-gray: 0 0% 38.4%;
+    --custom-gray-foreground: 0 0% 60%;
   }
 
   /* Font utility classes */
