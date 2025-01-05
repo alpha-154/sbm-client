@@ -9,7 +9,7 @@ export default function ConnectSection() {
           We succeed by making you{" "}
           <span className="text-[#FF0084]">successful!</span>
         </h1>
-        <p className="max-w-xs text-white  text-md text-center md:text-left">
+        <p className="max-w-xs text-white text-[16px] text-center md:text-left">
           In this journey, you&apos;ve likely come across countless marketing
           agencies promising fancy websites, improved SEO, and compelling ads.
           They may have even provided a marketing funnel and posting schedule.
