@@ -9,6 +9,7 @@ import LetsTalkSection from "./_components/LetsTalk";
 import TeamSection from "./_components/Team";
 import ContactSection from "./_components/ContactSection";
 import ImageCeo from "./_components/ImageCeo";
+import Timeline from "./_components/Timeline";
 
 export default function About() {
   return (
@@ -19,6 +20,8 @@ export default function About() {
       <ConnectSection />
       {/* business section */}
       <BusinessSection />
+      {/* process section */}
+      <Timeline />
       {/* marketing section */}
       <CarouselSlider />
       {/* image ceo section */}
@@ -31,6 +34,7 @@ export default function About() {
       <TeamSection />
       {/* contact section */}
       <ContactSection />
+
     </div>
   );
 }
